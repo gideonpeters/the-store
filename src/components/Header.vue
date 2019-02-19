@@ -1,25 +1,19 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-mine bg-dark">
+        <div class="container">
+            <div class="row justify-content-center ml-auto">
+                <div class="col-md-12">
+                    <div class="navbar-nav">
+                        <router-link class="nav-item nav-link mr-5" active-class="active" exact :to="{name: 'product.all'}">All Products</router-link>
+                        <router-link class="nav-item nav-link mr-5" active-class="active" exact :to="{name: 'product.phones'}">SmartPhones</router-link>
+                        <router-link class="nav-item nav-link mr-5" active-class="active" exact :to="{name: 'product.books'}">Notebooks</router-link>
+                        <router-link class="btn btn-primary py-1 mr-5" :to="{name: 'cart'}">Cart
+                            <i class="mdi mdi-cart"></i>
+                        </router-link>
+                    </div>
+                </div>    
+            </div>  
         </div>
     </nav>
   </div>
@@ -30,4 +24,19 @@ export default {
  
 }
 </script>
+
+<style lang="scss" scoped>
+ul{
+    display: inline;
+}
+
+.btn{
+    margin-left: 500px;
+}
+
+.nav-item{
+    color: white;
+}
+</style>
+
 
