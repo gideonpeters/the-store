@@ -5,7 +5,7 @@
                 <product-item :productName="product.name"
                             :productImg="product.image"
                             :productPrice="product.price"
-                            :productQty="product.quantity"></product-item>
+                            :productQty="product.quantity" />
             </div>
         </div>
     </div>
