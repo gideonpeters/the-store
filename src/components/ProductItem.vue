@@ -15,17 +15,17 @@
         <div class="row">
             <div class="col-7">
                 <div class="product-price  pt-2 mx-3">
-                    R$ {{ productPrice }}
+                    &#8358; {{ productPrice }},00
                 </div>
             </div>
             <div class="col-5">
                 <div class="product-qty  pt-2 mx-3">
-                    {{ productQty }}
+                    {{ productQty }} x 120,00
                 </div>
             </div>
         </div>
         <div class="row my-2 mx-3  justify-content-center">
-            <button class="btn btn-primary btn-block py-2 px-5 mt-2"> Add to Cart <i class="mdi mdi-cart"></i></button>
+            <button class="btn btn-primary btn-block py-2 px-5 mt-2" @click="addToCart"> Add to Cart <i class="mdi mdi-cart"></i></button>
         </div>
     </div>
 </template>
@@ -33,12 +33,22 @@
 <script>
 export default {
     props: [
+        'productId',
         'productName',
         'productImg',
         'productPrice',
         'productQty',
-
     ],
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+        addToCart() {
+            return this.$store.dispatch('addToCart', this.productId);
+        }
+    },
 }
 </script>
 
@@ -46,7 +56,7 @@ export default {
 <style lang="scss" scoped>
 .img{
     min-height: 300px;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center, center;
 }

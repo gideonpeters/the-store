@@ -1,5 +1,6 @@
 import AllProducts from './components/AllProducts';
-import Product from './components/Product';
+import ProductPhone from './components/ProductPhone';
+import ProductNotebook from './components/ProductNotebook';
 import Cart from './components/Cart';
 import Hello from './components/Hello';
 
@@ -17,12 +18,12 @@ export const routes = [
     {
         name: 'product.books',
         path: '/notebooks',
-        component: Product,
+        component: ProductNotebook,
     },
     {
         name: 'product.phones',
         path: '/smartphones',
-        component: Product,
+        component: ProductPhone,
     },
     {
         name: 'cart',

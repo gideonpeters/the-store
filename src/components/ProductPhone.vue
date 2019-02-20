@@ -1,7 +1,7 @@
 <template>
     <div class="container p-5">
         <div class="row justify-content-center">
-            <div class="col-md-4" v-for="product in allProducts" :key="product.id">
+            <div class="col-4" v-for="product in notebooks" :key="product.id">
                 <product-item :productName="product.name"
                             :productId="product.id"
                             :productImg="product.image"
@@ -12,26 +12,23 @@
     </div>
 </template>
 
+
 <script>
-import ProductItem from './ProductItem.vue';
+import ProductItem from "./ProductItem";
 
 export default {
     components: {
         'product-item': ProductItem,
     },
+    data() {
+        return {
+            
+        }
+    },
     computed: {
-        allProducts() {
-            return this.$store.getters.allProducts;
+        notebooks() {
+            return this.$store.getters.smartphoneProducts;
         }
     }
 }
 </script>
-
-<style lang="scss" scoped>
-div:first-of-type{
-    // margin-left: 50px;
-    // margin-right: 50px;
-}
-</style>
-
-
