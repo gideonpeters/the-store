@@ -3,6 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-4" v-for="product in allProducts" :key="product.id">
                 <product-item :productName="product.name"
+                            :theProduct="product"
                             :productId="product.id"
                             :productImg="product.image"
                             :productPrice="product.price"
@@ -28,10 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div:first-of-type{
-    // margin-left: 50px;
-    // margin-right: 50px;
-}
+
 </style>
 
 

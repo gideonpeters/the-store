@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-12" v-for="cartItem in cartItems" :key="cartItem.id">
                 <cart-item :cartId="cartItem.id"
+                            :cartItem="cartItem"
                             :cartName="cartItem.name"
                             :cartImg="cartItem.image"
                             :cartPrice="cartItem.price" />
@@ -44,9 +45,6 @@ export default {
             return totalPrice;
         }
     },
-    mounted() {
-        
-    }
 }
 </script>
 

@@ -38,6 +38,7 @@ export default {
         'productImg',
         'productPrice',
         'productQty',
+        'theProduct'
     ],
     data() {
         return {
@@ -46,7 +47,7 @@ export default {
     },
     methods: {
         addToCart() {
-            return this.$store.dispatch('addToCart', this.productId);
+            return this.$store.dispatch('addToCart', this.theProduct);
         }
     },
 }

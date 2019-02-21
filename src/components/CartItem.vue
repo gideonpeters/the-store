@@ -30,10 +30,11 @@ export default {
         'cartName',
         'cartPrice',
         'cartImg',
+        'cartItem',
     ],
     methods: {
         removeFromCart() {
-            return this.$store.dispatch('removeFromCart', this.cartId);
+            return this.$store.dispatch('removeFromCart', this.cartItem);
         }
     }
 }

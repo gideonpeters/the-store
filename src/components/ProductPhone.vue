@@ -3,6 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-4" v-for="product in notebooks" :key="product.id">
                 <product-item :productName="product.name"
+                            :theProduct="product"
                             :productId="product.id"
                             :productImg="product.image"
                             :productPrice="product.price"

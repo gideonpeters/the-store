@@ -132,14 +132,14 @@ export const store = new Vuex.Store({
   mutations: {
       addToCart: (state, payload) => {
           var cartItem = state.products.find(product => {
-              return product.id == payload;
+              return product == payload;
           })
 
           return state.cartItems.unshift(cartItem);
       },
       removeFromCart: (state, payload) => {
           var cartItem = state.products.find(product => {
-            return product.id == payload;
+            return product == payload;
           })
           var items = state.cartItems;
           return items.splice(items.indexOf(cartItem), 1)
