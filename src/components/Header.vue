@@ -11,7 +11,7 @@
                         <router-link class="btn btn-primary py-1" :to="{name: 'cart'}">Cart
                             <i class="mdi mdi-cart"></i>
                         </router-link>
-                            <div class="bell" v-if="numberInCart">{{ numberInCart }}</div>
+                            <div class="btn btn-circle" v-if="numberInCart">{{ numberInCart }}</div>
                     </div>
                 </div>    
             </div>  
@@ -62,6 +62,23 @@ ul{
     height: 15px;
     width: 15px;
     display: flex;
+    justify-content: center;
+}
+
+.btn-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #fff;
+    color: #000;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 </style>
