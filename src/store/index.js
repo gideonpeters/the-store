@@ -151,6 +151,7 @@ export const store = new Vuex.Store({
   mutations: {
       addToCart: (state, payload) => {
           if(payload.stock == 0){
+              alert(payload.name + ' is out of stock');
               return ;
           }
 
