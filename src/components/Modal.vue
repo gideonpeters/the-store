@@ -3,15 +3,15 @@
     <span v-if="cartItems.length == 0">No products :/</span>
     <div class="row mt-2">
         <div class="col-md-12" v-for="cartItem in cartItems" :key="cartItem.id">
-            <div class="popup-item bg-white rounded mb-2">
+            <div class="popup-item bg-white rounded mb-2 py-2">
                 <div class="row">
                     <div class="col-3">
                         <div class="img-mine ml-1" :style="{backgroundImage: 'url('+cartItem.image+')'}"></div>
                     </div>
                     <div class="col py-1 ml-3">
                         <div class="cart-item">{{ cartItem.name }}</div>
-                        <span class="mr-5">Amount: {{ cartItem.quantity }}</span>
-                        <span class="ml-4"> Price {{ cartItem.price }}</span>
+                        <span class="mr-5 grey">Amount: {{ cartItem.quantity }}</span>
+                        <span class="ml-4"> &#8358; {{ cartItem.price }},00</span>
                     </div>
                 </div>
                 
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="col">
-            <div class="btn btn-primary mt-2" @click="gotoCart"> View cart</div>
+            <div class="btn btn-primary mt-2 px-3 py-1" @click="gotoCart"> View cart</div>
         </div>
     </div>
   </div>
@@ -35,9 +35,9 @@
 export default {
     computed: {
         showModal() {
-         return this.$store.getters.getShowModal;
-     },
-     cartItems() {
+            return this.$store.getters.getShowModal;
+        },
+        cartItems() {
             return this.$store.getters.cartItems;
         },
         indistinctCart(){
@@ -50,7 +50,6 @@ export default {
             })
             return totalPrice;
         }
-
     },
     methods: {
         showOrHideModal() {
@@ -119,5 +118,10 @@ export default {
 
   .price{
       font-size: 1rem;
+    //   font-weight: bold;
+  }
+
+  .grey {
+      color: #cac8c8;
   }
 </style>
