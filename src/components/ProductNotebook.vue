@@ -7,7 +7,7 @@
                             :productId="product.id"
                             :productImg="product.image"
                             :productPrice="product.price"
-                            :productQty="product.quantity" />
+                            :productStock="product.stock" />
             </div>
         </div>
     </div>

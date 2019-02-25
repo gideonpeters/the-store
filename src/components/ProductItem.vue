@@ -20,12 +20,12 @@
             </div>
             <div class="col-5">
                 <div class="product-qty  pt-2 mx-3">
-                    {{ productQty }} x 120,00
+                    {{ productStock }} x 120,00
                 </div>
             </div>
         </div>
         <div class="row my-2 mx-3  justify-content-center">
-            <button class="btn btn-primary btn-block py-2 px-5 mt-2" @click="addToCart"> Add to Cart <i class="mdi mdi-cart"></i></button>
+            <button class="btn btn-primary btn-block py-2 px-5 mt-2" @click="addToCart"> Add to Cart <i class="mdi mdi-cart-plus"></i></button>
         </div>
     </div>
 </template>
@@ -37,7 +37,7 @@ export default {
         'productName',
         'productImg',
         'productPrice',
-        'productQty',
+        'productStock',
         'theProduct'
     ],
     data() {

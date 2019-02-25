@@ -5,7 +5,9 @@
                 <cart-item :cartId="cartItem.id"
                             :cartItem="cartItem"
                             :cartName="cartItem.name"
+                            :cartQty="cartItem.quantity"
                             :cartImg="cartItem.image"
+                            :cartProduct="cartItem"
                             :cartPrice="cartItem.price" />
             </div>
         </div>
@@ -37,9 +39,12 @@ export default {
         cartItems() {
             return this.$store.getters.cartItems;
         },
+        indistinctCart(){
+            return this.$store.getters.allCartItems;
+        },
         itemPrices() {
             let totalPrice = 0;
-            this.cartItems.forEach(item => {
+            this.indistinctCart.forEach(item => {
                 totalPrice += item.price;
             })
             return totalPrice;

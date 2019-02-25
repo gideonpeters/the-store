@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-mine bg-dark">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-mine bg-dark">
         <div class="container-fluid">
             <div class="row align-items-center mx-auto">
                 <div class="col-md-12">
@@ -10,8 +10,8 @@
                         <router-link class="nav-item nav-link mr-5" active-class="active" exact :to="{name: 'product.books'}">Notebooks</router-link>
                         <router-link class="btn btn-primary py-1" :to="{name: 'cart'}">Cart
                             <i class="mdi mdi-cart"></i>
-                        </router-link>
                             <div class="btn btn-circle" v-if="numberInCart">{{ numberInCart }}</div>
+                        </router-link>
                     </div>
                 </div>    
             </div>  
@@ -50,28 +50,13 @@ ul{
     color: white;
 }
 
-.bell{
-    position: relative;
-    top: -0.2rem;
-    right: 0.6rem;
-    background-color: white;
-    color: black;
-    font-size: 0.6rem;
-    font-weight: bold;
-    border-radius: 50%;
-    height: 15px;
-    width: 15px;
-    display: flex;
-    justify-content: center;
-}
-
 .btn-circle {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: -8px;
+    right: 2px;
     background-color: #fff;
     color: #000;
     display: -ms-flexbox;

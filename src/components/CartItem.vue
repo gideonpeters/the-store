@@ -9,7 +9,12 @@
                     {{ cartName }}
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-1">
+                <div>
+                    <i class="mdi mdi-plus-circle grey-icon" @click="addToCart" ></i>  {{ cartQty }}  <i class="mdi mdi-minus-circle grey-icon" @click="removeFromCart"></i>
+                </div>
+            </div>
+            <div class="col-2">
                 <div class="font-weight-bold">
                     &#8358; {{ cartPrice }},00
                 </div>
@@ -31,10 +36,15 @@ export default {
         'cartPrice',
         'cartImg',
         'cartItem',
+        'cartQty',
+        'cartProduct',
     ],
     methods: {
         removeFromCart() {
             return this.$store.dispatch('removeFromCart', this.cartItem);
+        },
+        addToCart() {
+            return this.$store.dispatch('addToCart', this.cartProduct);
         }
     }
 }
@@ -51,6 +61,10 @@ export default {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center, center;
+    }
+
+    .grey-icon{
+        color: rgb(224, 221, 221);
     }
 
     .icon{
