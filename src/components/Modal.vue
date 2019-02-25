@@ -1,7 +1,7 @@
 <template>
   <div class="box" v-if="showModal">
-    <span v-if="cartItems.length == 0">No products :/</span>
-    <div class="row mt-2">
+    <span class="null-warning" v-if="cartItems.length == 0">No products :/</span>
+    <div class="row mt-2" v-if="cartItems.length > 0">
         <div class="col-md-12" v-for="cartItem in cartItems" :key="cartItem.id">
             <div class="popup-item bg-white rounded mb-2 py-2">
                 <div class="row">
@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div class="row align-items-center">
+    <div class="row align-items-center" v-if="cartItems.length > 0">
         <div class="col-8">
             <div class="price mt-2" v-if="itemPrices">
                 Total Price: &#8358; {{ itemPrices }},00
@@ -73,6 +73,10 @@ export default {
 </script>
 
 <style lang="scss">
+.null-warning{
+    display: flex;
+    justify-content: center;
+}
 .img-mine{
     height: 100px;
     width: 100px;

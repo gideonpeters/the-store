@@ -17,7 +17,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="bg-white p-4 rounded shadow-sm warning" v-if="cartItems.length == 0">
+                <div class="bg-white p-4 rounded shadow-sm warning mt-4" v-if="cartItems.length == 0">
                     No product in the Cart yet.
                 </div>
             </div>
@@ -58,6 +58,14 @@ export default {
 </script>
 
 <style lang="scss">
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 .total-price{
     font-size: 1.2rem;
     font-weight: bold;
