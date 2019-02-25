@@ -6,6 +6,7 @@
             </div>
         </div>
         <div class="row">
+            <transition name="fade">
             <div class="col-md-12" v-for="cartItem in cartItems" :key="cartItem.id">
                 <cart-item :cartId="cartItem.id"
                             :cartItem="cartItem"
@@ -14,6 +15,7 @@
                             :cartImg="cartItem.image"
                             :cartPrice="cartItem.price" />
             </div>
+            </transition>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -59,12 +61,12 @@ export default {
 
 <style lang="scss">
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
+    transition: all .5s;
+  }
+  .fade-enter, .fade-leave-to {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
 
 .total-price{
     font-size: 1.2rem;
