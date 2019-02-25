@@ -1,7 +1,12 @@
 <template>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-12" v-for="cartItem in cartItems" :key="cartItem.id">
+            <div class="col">
+                <div class="cart-title">My Cart</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" v-for="cartItem in cartItems" :key="cartItem.id">
                 <cart-item :cartId="cartItem.id"
                             :cartItem="cartItem"
                             :cartName="cartItem.name"
@@ -11,14 +16,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
+            <div class="col-md-12">
                 <div class="bg-white p-4 rounded shadow-sm warning" v-if="cartItems.length == 0">
                     No product in the Cart yet.
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-3 ml-auto">
+            <div class="col-md-3 ml-auto">
                 <div class="total-price mt-4" v-if="itemPrices">
                     Total Price: &#8358; {{ itemPrices }},00
                 </div>
@@ -61,5 +66,10 @@ export default {
 .warning{
     font-weight: bold;
     font-size: 1.2rem;
+}
+
+.cart-title{
+    font-weight: bold;
+    font-size: 3rem;
 }
 </style>

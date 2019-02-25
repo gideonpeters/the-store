@@ -61,10 +61,11 @@ export default {
 <style lang="scss" scoped>
 .cart-card{
     background-color: white;
+    min-height: 90px;
 
     .img{
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center, center;

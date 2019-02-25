@@ -1,18 +1,28 @@
 <template>
   <div >
     <Header />
+    <transition name="fade">
+      <modal />
+    </transition>
+      <my-mask />
     <transition name="leave">
     <router-view />
     </transition>
+    
   </div>
+
 </template>
 
 <script>
 import Header from './components/Header.vue';
+import Modal from './components/Modal.vue';
+import myMask from './components/Mask.vue';
 
 export default {
   components: {
     Header,
+    Modal,
+    myMask,
   }
 }
 </script>

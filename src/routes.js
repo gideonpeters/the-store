@@ -29,5 +29,5 @@ export const routes = [
         name: 'cart',
         path: '/cart',
         component: Cart,
-    }
+    },
 ];

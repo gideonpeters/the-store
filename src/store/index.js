@@ -116,7 +116,7 @@ export const store = new Vuex.Store({
         }
     ],
     cartItems: [],
-    // sortedCartItems: [],
+    showModal: false,
   },
   getters: {
     allProducts: state => {
@@ -146,6 +146,9 @@ export const store = new Vuex.Store({
         var cartItems = state.cartItems;
         
         return cartItems;
+    },
+    getShowModal: state => {
+        return state.showModal
     },
   },
   mutations: {
@@ -190,7 +193,10 @@ export const store = new Vuex.Store({
                 product.quantity = 0;
             }
         })  
-      }
+      },
+      showModal: (state) => {
+        return state.showModal = !state.showModal;
+      },
   },
   actions: {
     addToCart: ({ commit }, payload) => {
@@ -201,6 +207,9 @@ export const store = new Vuex.Store({
     },
     closeUp: ({ commit }, payload) => {
         commit('closeUp', payload);
-    }
+    },
+    showOrHideModal: context => {
+        context.commit('showModal');
+      },
   }
 })
