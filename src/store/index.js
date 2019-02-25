@@ -166,21 +166,31 @@ export const store = new Vuex.Store({
         var items = state.cartItems;
         cartItem.quantity++;
         cartItem.stock--;
-        // (cartItem.stock <= 0 ) ? (cartItem.stock = 0, cartItem.quantity = 10, alert(cartItem.name +' is out of stock.')) : cartItem.stock--;
         return state.cartItems.splice((items.indexOf(cartItem)), 0, cartItem);
       },
       removeFromCart: (state, payload) => {
+          var items = state.cartItems;
           var cartItem = state.products.find(product => {
             return product == payload;
           })
 
-          var items = state.cartItems;
           cartItem.stock++;
           //increase stock, decrease quantity
           (cartItem.quantity >= 0) ?  cartItem.quantity-- : alert('removed from cart');
 
           return items.splice(items.indexOf(cartItem), 1)
       },
+      closeUp: (state, payload) => {
+        var items = state.cartItems;
+        // eslint-disable-next-line
+        var cartItem = items.forEach(product => {
+            if(product == payload) {
+                items.splice(items.indexOf(product), product.quantity);
+                product.stock = 10;
+                product.quantity = 0;
+            }
+        })  
+      }
   },
   actions: {
     addToCart: ({ commit }, payload) => {
@@ -189,5 +199,8 @@ export const store = new Vuex.Store({
     removeFromCart: ({ commit }, payload) => {
         commit('removeFromCart', payload);
     },
+    closeUp: ({ commit }, payload) => {
+        commit('closeUp', payload);
+    }
   }
 })

@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="col-1">
-                <div>
+                <div class="font-weight-bold">
                     <i class="mdi mdi-plus-circle grey-icon" @click="addToCart" ></i>  {{ cartQty }}  <i class="mdi mdi-minus-circle grey-icon" @click="removeFromCart"></i>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="col-1">
-                <div class="icon" @click="removeFromCart">
+                <div class="icon" @click="closeUp">
                     <i class="mdi mdi-close"></i>
                 </div>
             </div>
@@ -37,14 +37,21 @@ export default {
         'cartImg',
         'cartItem',
         'cartQty',
-        'cartProduct',
     ],
+    computed: {
+        indistinctCart(){
+            return this.$store.getters.allCartItems;
+        },
+    },
     methods: {
         removeFromCart() {
             return this.$store.dispatch('removeFromCart', this.cartItem);
         },
         addToCart() {
-            return this.$store.dispatch('addToCart', this.cartProduct);
+            return this.$store.dispatch('addToCart', this.cartItem);
+        },
+        closeUp(){
+            return this.$store.dispatch('closeUp', this.cartItem);
         }
     }
 }
@@ -65,6 +72,7 @@ export default {
 
     .grey-icon{
         color: rgb(224, 221, 221);
+        cursor: pointer;
     }
 
     .icon{
@@ -77,6 +85,7 @@ export default {
         font-size: 0.9rem;
         font-weight: bold;
         color: rgb(255, 255, 255);
+        cursor: pointer;
     }
 }
 </style>

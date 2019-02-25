@@ -7,7 +7,6 @@
                             :cartName="cartItem.name"
                             :cartQty="cartItem.quantity"
                             :cartImg="cartItem.image"
-                            :cartProduct="cartItem"
                             :cartPrice="cartItem.price" />
             </div>
         </div>
@@ -21,7 +20,7 @@
         <div class="row">
             <div class="col-3 ml-auto">
                 <div class="total-price mt-4" v-if="itemPrices">
-                    Total Price: R$ {{ itemPrices }},00
+                    Total Price: &#8358; {{ itemPrices }},00
                 </div>
             </div>
         </div>
