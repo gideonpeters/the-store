@@ -6,8 +6,7 @@
             </div>
         </div>
         <div class="row">
-            <transition name="fade">
-            <div class="col-md-12" v-for="cartItem in cartItems" :key="cartItem.id">
+            <div class="col-md-12" v-for="cartItem in cartItems" :key="cartItem">
                 <cart-item :cartId="cartItem.id"
                             :cartItem="cartItem"
                             :cartName="cartItem.name"
@@ -15,7 +14,6 @@
                             :cartImg="cartItem.image"
                             :cartPrice="cartItem.price" />
             </div>
-            </transition>
         </div>
         <div class="row">
             <div class="col-md-12">

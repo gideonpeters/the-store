@@ -136,6 +136,13 @@ export const store = new Vuex.Store({
 
         return notebookProducts;
     },
+    getProductById: (state) => (id) => {
+        var item = state.products.find(product => {
+            return product.id == id;
+        })
+
+        return item;
+    },
     cartItems: state => {
         var cartItems = state.cartItems;
         var withoutDuplicates = [...new Set(cartItems)];
@@ -185,14 +192,13 @@ export const store = new Vuex.Store({
       },
       closeUp: (state, payload) => {
         var items = state.cartItems;
-        // eslint-disable-next-line
-        var cartItem = items.forEach(product => {
+        items.find(product => {
             if(product == payload) {
                 items.splice(items.indexOf(product), product.quantity);
                 product.stock = 10;
                 product.quantity = 0;
             }
-        })  
+        })
       },
       showModal: (state) => {
         return state.showModal = !state.showModal;

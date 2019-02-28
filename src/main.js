@@ -9,6 +9,10 @@ import { routes } from './routes'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+import Toasted from 'vue-toasted';
+
+Vue.use(Toasted)
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({

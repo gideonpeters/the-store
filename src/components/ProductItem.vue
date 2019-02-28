@@ -1,5 +1,5 @@
 <template>
-    <div class="product-card p-2 rounded shadow-sm mb-4">
+    <div class="product-card p-2 rounded shadow-sm mb-4" @click="goToProduct(productId)">
         <div class="row">
             <div class="col">
                 <div class="img m-2" :style="{backgroundImage: 'url('+productImg+')'}"></div>
@@ -40,14 +40,18 @@ export default {
         'productStock',
         'theProduct'
     ],
-    data() {
-        return {
-
-        }
-    },
     methods: {
         addToCart() {
-            return this.$store.dispatch('addToCart', this.theProduct);
+            return this.$store.dispatch('addToCart', this.theProduct).then(() => {
+                let toast = this.$toasted.show("Added To Cart", { 
+                    theme: "toasted-primary", 
+                    position: "bottom-right", 
+                    duration : 1000
+                });
+            });
+        },
+        goToProduct(id){ 
+            this.$router.push({ name: 'product' , params: {id: id } })
         }
     },
 }

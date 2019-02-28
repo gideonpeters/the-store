@@ -1,6 +1,7 @@
 import AllProducts from './components/AllProducts';
 import ProductPhone from './components/ProductPhone';
 import ProductNotebook from './components/ProductNotebook';
+import ProductDetail from './components/ProductDetail.vue';
 import Cart from './components/Cart';
 import Hello from './components/Hello';
 
@@ -30,4 +31,9 @@ export const routes = [
         path: '/cart',
         component: Cart,
     },
+    {
+        name: 'product',
+        path: '/product/:id',
+        component: ProductDetail,
+    }
 ];

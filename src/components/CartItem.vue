@@ -61,7 +61,7 @@ export default {
 <style lang="scss" scoped>
 .cart-card{
     background-color: white;
-    min-height: 90px;
+    // min-height: 90px;
 
     .img{
     height: 80px;

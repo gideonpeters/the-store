@@ -5,7 +5,7 @@
       <modal />
     </transition>
       <my-mask />
-    <transition name="leave">
+    <transition name="fade">
     <router-view />
     </transition>
     

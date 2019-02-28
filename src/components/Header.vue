@@ -33,7 +33,7 @@ export default {
  },
  methods: {
     showOrHideModal() {
-        console.log(this.showModal)
+        // console.log(this.showModal)
         return this.$store.dispatch('showOrHideModal');
     }
  }

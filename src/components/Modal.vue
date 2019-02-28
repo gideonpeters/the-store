@@ -18,13 +18,13 @@
             </div>
         </div>
     </div>
-    <div class="row align-items-center" v-if="cartItems.length > 0">
-        <div class="col-8">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-8" v-if="cartItems.length > 0">
             <div class="price mt-2" v-if="itemPrices">
                 Total Price: &#8358; {{ itemPrices }},00
             </div>
         </div>
-        <div class="col">
+        <div class="col-4">
             <div class="btn btn-primary mt-2 px-3 py-1" @click="gotoCart"> View cart</div>
         </div>
     </div>
